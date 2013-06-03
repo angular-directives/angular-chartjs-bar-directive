@@ -80,9 +80,9 @@ angular.module('angular.directives-chartjs-bar', []).directive('angChartjsBar', 
     }
   };
 
-  var chartjsLine = {
+  var chartjsBar = {
     compile: compilationFunction,
     replace: true
   };
-  return chartjsLine;
+  return chartjsBar;
 }]);
