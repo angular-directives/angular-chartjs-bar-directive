@@ -14,7 +14,8 @@
       var app = angular.module('angularjs-starter', ['angular.directives-chartjs-bar']);
 
       app.controller('MainCtrl', function($scope) {
-        $scope.barData =  {
+        $scope.barData =  [
+        {
           labels : ["January","February","March","April","May","June","July"],
           datasets : [
             {
@@ -28,7 +29,22 @@
               data : [28,48,40,19,96,27,100]
             }
           ]
-        }
+        },
+        {
+          labels : ["January","February","March","April","May","June","July"],
+          datasets : [
+            {
+              fillColor : "rgba(220,220,220,0.5)",
+              strokeColor : "rgba(220,220,220,1)",
+              data : [12,33,70,53,96,22,10]
+            },
+            {
+              fillColor : "rgba(151,187,205,0.5)",
+              strokeColor : "rgba(151,187,205,1)",
+              data : [11,78,30,88,25,3,60]
+            }
+          ]
+        }]
       });
       </script>
 
@@ -37,11 +53,13 @@
     <h1>AngularJS Chart.js Bar Directive</h1>
     <p>Have a look at the source code to see an example.</p>
 
-    <div ang:chartjs:bar data-chartjs-model="barData"
-                              data-chartjs-width="800"
-                              data-chartjs-height="400"
-                              data-chartjs-bezier-curve="false"
-                              data-chartjs-scale-show-labels="true"
-                              data-chartjs-animation-steps="30"></div>
+    <div ng-repeat="i in [0, 1]">
+      <div ang:chartjs:bar data-chartjs-model="barData[i]"
+                           data-chartjs-width="400 + i * 400"
+                           data-chartjs-height="200 + i * 200"
+                           data-chartjs-bezier-curve="false"
+                           data-chartjs-scale-show-labels="true"
+                           data-chartjs-animation-steps="30"></div>
+    </div>
   </body>
 </html>
