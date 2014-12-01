@@ -54,12 +54,13 @@
     <p>Have a look at the source code to see an example.</p>
 
     <div ng-repeat="i in [0, 1]">
-      <div ang:chartjs:bar data-chartjs-model="barData[i]"
+      <ang:chartjs:bar data-chartjs-model="barData[i]"
                            data-chartjs-width="400 + i * 400"
                            data-chartjs-height="200 + i * 200"
                            data-chartjs-bezier-curve="false"
                            data-chartjs-scale-show-labels="true"
-                           data-chartjs-animation-steps="30"></div>
+                           data-chartjs-animation-steps="30">
+      </ang:chartjs:bar>
     </div>
   </body>
 </html>

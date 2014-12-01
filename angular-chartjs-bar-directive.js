@@ -44,7 +44,7 @@ angular.module('angular.directives-chartjs-bar', []).directive('angChartjsBar', 
   };
 
   var chartjsBar = {
-    restrict: 'EA',
+    restrict: 'E',
     //compile: compilationFunction,
     template: '<canvas class="ang-chartjs-bar"></canvas>',
     scope: {
@@ -86,7 +86,7 @@ angular.module('angular.directives-chartjs-bar', []).directive('angChartjsBar', 
             var width = scope.chartjsWidth || '400';
             var height = scope.chartjsHeight || '400';
 
-            var canvas = elements[0];
+            var canvas = elements[0].children[0];
             canvas.setAttribute('width', width);
             canvas.setAttribute('height', height);
 
@@ -96,8 +96,7 @@ angular.module('angular.directives-chartjs-bar', []).directive('angChartjsBar', 
           }
         }
       }, true);
-    },
-    replace: true
+    }
   };
   return chartjsBar;
 }]);
